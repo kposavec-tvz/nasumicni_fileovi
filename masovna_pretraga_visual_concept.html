@@ -1,0 +1,214 @@
+ <!DOCTYPE html>
+<html>
+<head>
+
+<style type="text/css">
+
+	div{
+		float:left;
+		padding-left: 10px;
+	}
+
+	#rezultat{
+		display: none ;
+		margin-left: 10px;
+		border-left: 1px solid;
+	}
+
+ table, th, td {
+  border: 1px solid;
+} 
+
+
+</style>
+
+</head>
+<body>
+
+<div>
+<label for="start">Start date:</label>
+
+<input type="date" id="start" name="start"></br>
+
+<label for="end">End date:</label>
+
+<input type="date" id="end" name="end"></br>
+
+
+<label for="atribut">Pretraga po:</label></br>
+
+<select name="atribut" id="atribut">
+  <option>ID</option>
+  <option>OIB</option>
+  <option>Referentni kod</option>
+  <option>email</option>
+</select> 
+</br>
+<label for="status">  Trenutni status</label></br>
+
+<select name="status" id="status">
+	<option>Draft</option>
+	<option>Potrebna ručna autorizacija zahtjeva</option>
+	<option>Storno</option>
+	<option>U dostavi</option>
+	<option>U procesu</option>
+	<option>Za dostavu</option>
+	<option>Za obradu</option>
+	<option>Za provjeru</option>
+	<option>Završena</option>
+</select> 
+
+<p>
+	Popis narudžbi:</br>
+	<textarea rows="40" cols="25">
+12345678911
+12345678912
+12345678913
+12345678914
+12345678915
+12345678916
+12345678917
+12345678918
+12345678919
+12345678920
+12345678921
+12345678922
+12345678923
+12345678924
+12345678925
+12345678926
+12345678927
+12345678928
+12345678929
+12345678930
+12345678931
+12345678932
+12345678933
+12345678934
+12345678935
+12345678936
+12345678937
+12345678938
+12345678939
+12345678940
+12345678941
+
+	</textarea>
+</p>
+
+ <button type="button" onclick="pretraga()">Pretraga!</button> 
+<script type="text/javascript">
+function pretraga() {
+  var x = document.getElementById("rezultat");
+
+    x.style.display = "block";
+
+  }
+
+
+</script>
+
+ </div>
+
+ <div id="rezultat">
+
+<label for="status_m">  Novi status:</label></br>
+<select name="status_n" id="status_n">
+  <option>Draft</option>
+  <option>Potrebna ručna autorizacija zahtjeva</option>
+  <option>Storno</option>
+  <option>U dostavi</option>
+  <option>U procesu</option>
+  <option>Za dostavu</option>
+  <option>Za obradu</option>
+  <option>Za provjeru</option>
+  <option>Završena</option>
+</select>
+</br>
+	Razlog promjene: <input type="text"></br>
+ <button type="button">Promjeni status</button> </br>
+ 
+
+<h1>rezulati</h1>
+ <table>
+  <tr>
+    <th>id</th>
+    <th>oib</th>
+    <th>status</th>
+    <th>ime</th>
+  </tr>
+  <tr>
+    <td>fake data</td>
+    <td>fake data</td>
+    <td>fake data</td>
+    <td>fake data</td>
+  </tr>
+  <tr>
+    <td>fake data</td>
+    <td>fake data</td>
+    <td>fake data</td>
+    <td>fake data</td>
+  </tr>
+    <tr>
+    <td>fake data</td>
+    <td>fake data</td>
+    <td>fake data</td>
+    <td>fake data</td>
+  </tr>  <tr>
+    <td>fake data</td>
+    <td>fake data</td>
+    <td>fake data</td>
+    <td>fake data</td>
+  </tr>  <tr>
+    <td>fake data</td>
+    <td>fake data</td>
+    <td>fake data</td>
+    <td>fake data</td>
+  </tr>  <tr>
+    <td>fake data</td>
+    <td>fake data</td>
+    <td>fake data</td>
+    <td>fake data</td>
+  </tr> <tr>
+    <td>fake data</td>
+    <td>fake data</td>
+    <td>fake data</td>
+    <td>fake data</td>
+  </tr> <tr>
+    <td>fake data</td>
+    <td>fake data</td>
+    <td>fake data</td>
+    <td>fake data</td>
+  </tr> <tr>
+    <td>fake data</td>
+    <td>fake data</td>
+    <td>fake data</td>
+    <td>fake data</td>
+  </tr> <tr>
+    <td>fake data</td>
+    <td>fake data</td>
+    <td>fake data</td>
+    <td>fake data</td>
+  </tr> <tr>
+    <td>fake data</td>
+    <td>fake data</td>
+    <td>fake data</td>
+    <td>fake data</td>
+  </tr> <tr>
+    <td>fake data</td>
+    <td>fake data</td>
+    <td>fake data</td>
+    <td>fake data</td>
+  </tr> <tr>
+    <td>fake data</td>
+    <td>fake data</td>
+    <td>fake data</td>
+    <td>fake data</td>
+  </tr>
+</table> 
+
+
+ </div>
+
+</body>
+</html> 
