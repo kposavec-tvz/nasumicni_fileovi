@@ -1,0 +1,249 @@
+<html>
+<meta charset="UTF-8">
+<style>
+  
+  *{
+    background-color: #181818;
+    font-family: arial;
+
+  }
+
+  h1{
+    background-color: #404040;
+    padding-top: 1px;
+    font-weight: bold;
+  }
+
+
+  label{
+    background-color: #404040;
+    padding-top: 8px;
+    font-weight: bold;
+  }
+
+  #body1 {
+    float: none;
+    width: 900px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: white;
+    background-color: #404040;
+  }
+
+  #vrste{
+    /*stvari za vrste greške i input field*/
+    font-weight: bold;
+    float: left;
+    background-color: #404040;
+  }
+
+  #greNatpis{
+    /*label greška:*/
+    float: left;
+    margin-bottom: 4px;
+  }
+
+  .vrsta{
+    /* gumbi vrste greške*/
+    margin-left: 12px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border: 2px solid #ccc;
+    background-color: #181818;
+    float: left;
+    width: 21%;
+    text-align: center;
+    border-radius:7px;
+
+  }
+
+
+  form {
+    display: flex;
+    flex-direction: column;
+    background-color: #404040;
+  }
+
+  input {
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 16px;
+    color: white;
+    background-color: #404040;
+    font-weight: bold;
+    border-radius:10px;
+  }
+
+  button {
+    padding: 8px;
+    font-size: 16px;
+    background-color: #E20074;
+    color: white;
+    border: 3px solid black;
+    border-radius:10px;
+    cursor: pointer;
+    margin-top: 11px;
+
+  }
+
+  table{
+      color: white;
+      width: 100%;
+      padding: 2px;
+      border: 1px solid #ccc;
+      font-size: 18;
+      font-family: tahoma;
+      border-collapse: collapse;
+
+  }
+
+  tr, th, td {
+    border: 1px solid #ccc;
+    padding: 3px 4px 3px 4px;
+  }
+
+  select{
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    border-radius:10px;
+  }
+
+
+ #foot{
+    color: grey;
+    position: relative;
+    bottom: 0;
+    text-align: center;
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+
+</style>
+
+
+  <head>
+    <title>GREŠKE AGENATA - V7</title>
+   <link rel="icon" type="image/x-icon" href="https://i.imgur.com/FhW6DVE.png">
+
+  </head>
+  <body>
+
+   <div id="body1">
+    <h1>GREŠKE AGENATA</h1>
+
+   <form onsubmit="addToTable(); return false;">
+      <label>OIB:</label>
+      <input id="oib" type="text" />
+      <br />
+      <label>Agent:</label>
+      <input id="agent" type="text" />
+      <br />
+
+      <div id="vrste">
+      <label id="greNatpis">Greška:</label>
+       
+        <div class="vrsta" onclick="document.getElementById('greška').value+= 'Autorizacija: '">Autorizacija </div>
+        <div class="vrsta" onclick="document.getElementById('greška').value+= 'Ispunjavanje: '">Ispunjavanje </div>
+        <div class="vrsta" onclick="document.getElementById('greška').value+= 'Komunikacija: '">Komunikacija </div>
+        <div class="vrsta" onclick="document.getElementById('greška').value+= 'Ponuda: '">Ponuda </div>
+       </div>
+      <input id="greška" type="text" placeholder="opis"/>
+      <br />
+      <label>Ishod:</label>
+      <select id="ishod" type="text" />
+        <option value="Zvanje">Zvanje</option>
+        <option value="Izgubljeno vrijeme, uneseno">Izgubljeno vrijeme, uneseno</option>
+        <option value="Uneseno protiv pravila">Uneseno protiv pravila</option>
+        <option value="Storno">Storno</option>
+      </select>
+      <br />
+      <label>Tim:</label>
+      <select id="tim" type="text" />
+        <option value="Slušalica">Slušalica</option>   
+        <option value="Chat">Chat</option>
+        <option value="Care">Care</option>  
+        <option value="Backup/Ostalo">Backup/Ostalo</option>   
+      </select>
+      <label>Admin: </label>
+      <input id="upisao" type="text" />
+      <button type="submit">Dodaj red</button>
+      
+    </form>
+
+    <table id="table">
+      <tr>
+        <th>OIB</th>
+        <th>Agent</th>
+        <th>Greška</th>
+        <th>Ishod</th>
+        <th>Tim</th>
+        <th>Upisao</th>
+        <th>Datum upisa</th>
+      </tr>
+    </table>
+
+    <script>
+
+	
+      function addToTable(event) {
+       // event.preventDefault();
+
+       var date = new Date().toLocaleDateString("de-DE");
+       
+
+        var oib = document.getElementById("oib").value;
+        var agent = document.getElementById("agent").value;
+        var greška = document.getElementById("greška").value;
+        var ishod = document.getElementById("ishod").value;
+        var tim = document.getElementById("tim").value;
+        var upisao = document.getElementById("upisao").value;
+
+        //dodavanje reda
+        var table = document.getElementById("table");
+        var row = table.insertRow(-1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+        var cell7 = row.insertCell(6);
+
+        //umetanje vrijednosti
+        cell1.innerHTML = oib;
+        cell2.innerHTML = agent;
+        cell3.innerHTML = greška;
+        cell4.innerHTML = ishod;
+        cell5.innerHTML = tim;
+        cell6.innerHTML = upisao;
+        cell7.innerHTML = date;
+
+        //reset forme na prazno
+        document.getElementById("oib").value = "";
+        document.getElementById("agent").value = "";
+        document.getElementById("greška").value = "";
+        document.getElementById("ishod").value = "";
+        document.getElementById("tim").value = "";
+      }
+
+      //zaustavljanje slučajnog izlaska
+    window.onbeforeunload = function(e) {
+       window.open(document.URL,"_blank");
+       return 'Dialog text here.';
+    };
+
+
+
+    </script>
+  </div>
+  </body>
+
+
+  <div id="foot">Na kraju smjene kopirati u Excel na shareu</br>Made by: kposavec - v7 03_04_2023</div>
+</html>
