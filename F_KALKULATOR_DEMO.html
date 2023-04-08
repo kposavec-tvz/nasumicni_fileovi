@@ -1,0 +1,363 @@
+<html>
+<! --- kposavec     VIZUALNI SKLEPANI DEMO ZA PRIJEDLOG IZLGEDA ZA IMPLEMENTACIJU---> 
+<! --- kposavec     PROČIŠĆENA VERZIJA ---> 
+<head>
+  <style type="text/css">
+
+    body{
+      font-family: arial;
+  
+    }
+
+    #start{
+     display: flex; 
+
+    }
+
+    #pri, #drugi{
+      padding: 10px;
+    }
+
+
+
+    #gumb{
+      width: 150px;
+      height: 60px;
+      font-size: large;
+    }
+
+    #price{
+      padding: 20px;
+      font-size: xx-large;
+    }
+
+    table, th, td {
+      border-collapse: collapse;
+      border: 1px solid black;
+      margin: 1px;
+      padding: 3px;
+    }
+
+    #opcije{
+      width: 12%;
+    }
+
+    #tablica{
+      width: 100%;
+      padding: 10px;
+
+
+    }
+    label{
+      width: 100%;
+    }
+
+
+
+  </style>
+</head>
+
+<div id="start">
+
+<div id="pri">
+
+<body>
+
+
+  USER ID: <input class="form-control" type="text" value=""></br>
+
+  Paket:
+
+  <select class="form-control" id="Package" name="Package"><option val="" value="0">Odaberite paket ...
+  <option value="0" val="1095611"> DODATNI</option>
+  <option value="0" selected="selected" val="1095596">3 PAKET</option>
+  <option value="0" val="1095617">Mini </option>
+  <option value="0" val="1095618">Satelit</option>
+  </select>        
+</div>
+
+<div id="drugi">
+  </br>
+
+  Cijene:</br>
+  <input name='paket' type='radio' value='319'>  319</input></br>
+  <input name='paket' type='radio' value='299'>  299</input></br>
+  <input name='paket' type='radio' value='249'>  249</input></br>
+  <input name='paket' type='radio' value='229'>  229</input></br>
+  <input name='paket' type='radio' value='209'>  209</input></br>
+
+  </br>50 kn POPUST:</br>
+
+  <input autocomplete="off" id="benefit" name="benefit" type="radio" value="-50">Da </br>
+  <input autocomplete="off" id="benefit" name="benefit" type="radio" value="0">Ne</br>
+  </br>
+
+
+</div>
+</div>
+
+ <button id="opcije" onclick="sakrivanje()">Prikaži dodatne opcije</button></br>
+<div id="tablica">
+
+  Dodatne opcije:</br>
+  <table>
+      <tbody>
+        <tr>
+          <td> EXTRA PAKETI</td>
+          <td>BEZ UO</td>
+          <td>UO12</td>
+          <td>UO18</td>
+          <td>UO24 </td>
+          <td>poništi </td>
+        </tr>
+        <tr>
+          <td><label>PLACEHOLDER PLUS</label></td>
+          <td><label><input name='PLACEHOLDER PLUS' type='radio' value='129'>  129</label></td>
+          <td><label><input name='PLACEHOLDER PLUS' type='radio' value='89'>   89</label></td>
+          <td><label><input name='PLACEHOLDER PLUS' type='radio' value='44.5'> 44.5</label></td>
+          <td><label><input name='PLACEHOLDER PLUS' type='radio' value='15'>   15</label></td>
+          <td><label><input name='PLACEHOLDER PLUS' type='radio' value='0'>    x</label></td>
+        </tr>
+        <tr>
+          <td><label>PLACEHOLDER EXTRA</label></td>
+          <td><label><input name='PLACEHOLDER EXTRA' type='radio' value='148'> 148</label></td>
+          <td><label><input name='PLACEHOLDER EXTRA' type='radio' value='108'> 108</label></td>
+          <td><label><input name='PLACEHOLDER EXTRA' type='radio' value='64'>  64</label></td>
+          <td><label><input name='PLACEHOLDER EXTRA' type='radio' value='34'>  34</label></td>
+          <td><label><input name='PLACEHOLDER EXTRA' type='radio' value='0'>   x</label></td>
+        </tr>
+        <tr>
+          <td><label>HBO PREMIUM</label></td>
+          <td><label><input name='HBO PREMIUM' type='radio' value='89'>  89</label></td>
+          <td><label><input name='HBO PREMIUM' type='radio' value='59'>  59</label></td>
+          <td><label><input name='HBO PREMIUM' type='radio' value='29.5'>    29.5</label></td>
+          <td><label><input name='HBO PREMIUM' type='radio' value='5'>   5</label></td>
+          <td><label><input name='HBO PREMIUM' type='radio' value='0'>   x</label></td>
+        </tr>
+        <tr>
+          <td><label>PLUS</label></td>
+          <td><label><input name='PLUS' type='radio' value='89'>    89</label></td>
+          <td><label><input name='PLUS' type='radio' value='49 '>   49 </label></td>
+          <td><label><input name='PLUS' type='radio' value='24.5'>  24.5</label></td>
+          <td><label><input name='PLUS' type='radio' value='5 '>    5 </label></td>
+          <td><label><input name='PLUS' type='radio' value='0'> x</label></td>
+        </tr>
+        <tr>
+          <td><label>PLUS 2</label></td>
+          <td><label><input name='PLUS 2' type='radio' value='39'>  39</label></td>
+          <td><label><input name='PLUS 2' type='radio' value='19'>  19</label></td>
+          <td><label><input name='PLUS 2' type='radio' value='/' disabled>   /</label></td>
+          <td><label><input name='PLUS 2' type='radio' value='/' disabled>   /</label></td>
+          <td><label><input name='PLUS 2' type='radio' value='0'>   x</label></td>
+        </tr>
+        <tr>
+          <td><label>Mixy </label></td>
+          <td><label><input name='Mixy ' type='radio' value='89'>    89</label></td>
+          <td><label><input name='Mixy ' type='radio' value='49'>    49</label></td>
+          <td><label><input name='Mixy ' type='radio' value='/' disabled> /</label></td>
+          <td><label><input name='Mixy ' type='radio' value='5'> 5</label></td>
+          <td><label><input name='Mixy ' type='radio' value='0'> x</label></td>
+        </tr>
+        <tr>
+          <td><label>EXPANDED </label></td>
+          <td><label><input name='EXPANDED ' type='radio' value='69'>   69</label></td>
+          <td><label><input name='EXPANDED ' type='radio' value='49'>   49</label></td>
+          <td><label><input name='EXPANDED ' type='radio' value='24.5'> 24.5</label></td>
+          <td><label><input name='EXPANDED ' type='radio' value='5'>    5</label></td>
+          <td><label><input name='EXPANDED ' type='radio' value='0'>    x</label></td>
+        </tr>
+        <tr>
+          <td><label>Tv now NOW</label></td>
+          <td><label><input name='Tv now NOW' type='radio' value='49'>  49</label></td>
+          <td><label><input name='Tv now NOW' type='radio' value='39'>  39</label></td>
+          <td><label><input name='Tv now NOW' type='radio' value='19.5'>    19.5</label></td>
+          <td><label><input name='Tv now NOW' type='radio' value='4'>   4</label></td>
+          <td><label><input name='Tv now NOW' type='radio' value='0'>   x</label></td>
+        </tr>
+        <tr>
+          <td><label>Audio_Klub Plus</label></td>
+          <td><label><input name='Audio_Klub Plus' type='radio' value='29'>  29</label></td>
+          <td><label><input name='Audio_Klub Plus' type='radio' value='/' disabled>   /</label></td>
+          <td><label><input name='Audio_Klub Plus' type='radio' value='/' disabled>   /</label></td>
+          <td><label><input name='Audio_Klub Plus' type='radio' value='/' disabled>   /</label></td>
+          <td><label><input name='Audio_Klub Plus' type='radio' value='0'>   x</label></td>
+        </tr>
+        <tr>
+          <td><label>Tv now Filmovi </label></td>
+          <td><label><input name='Tv now Filmovi ' type='radio' value='15'> 15</label></td>
+          <td><label><input name='Tv now Filmovi ' type='radio' value='/' disabled>  /</label></td>
+          <td><label><input name='Tv now Filmovi ' type='radio' value='/' disabled>  /</label></td>
+          <td><label><input name='Tv now Filmovi ' type='radio' value='/' disabled>  /</label></td>
+          <td><label><input name='Tv now Filmovi ' type='radio' value='0'>  x</label></td>
+        </tr>
+        <tr>
+          <td><label>Tv now Serije </label></td>
+          <td><label><input name='Tv now Serije ' type='radio' value='20'>  20</label></td>
+          <td><label><input name='Tv now Serije ' type='radio' value='/' disabled>   /</label></td>
+          <td><label><input name='Tv now Serije ' type='radio' value='/' disabled>   /</label></td>
+          <td><label><input name='Tv now Serije ' type='radio' value='/' disabled>   /</label></td>
+          <td><label><input name='Tv now Serije ' type='radio' value='0'>   x</label></td>
+        </tr>
+        <tr>
+          <td><label>RADIOTV2</label></td>
+          <td><label><input name='RADIOTV2' type='radio' value='3'>   3</label></td>
+          <td><label><input name='RADIOTV2' type='radio' value='/' disabled>   /</label></td>
+          <td><label><input name='RADIOTV2' type='radio' value='/' disabled>   /</label></td>
+          <td><label><input name='RADIOTV2' type='radio' value='/' disabled>   /</label></td>
+          <td><label><input name='RADIOTV2' type='radio' value='0'>   x</label></td>
+        </tr>
+        <tr>
+          <td><label>RADIOTV2 Premium</label></td>
+          <td><label><input name='RADIOTV2 Premium' type='radio' value='29'>  29</label></td>
+          <td><label><input name='RADIOTV2 Premium' type='radio' value='/' disabled>   /</label></td>
+          <td><label><input name='RADIOTV2 Premium' type='radio' value='/' disabled>   /</label></td>
+          <td><label><input name='RADIOTV2 Premium' type='radio' value='/' disabled>   /</label></td>
+          <td><label><input name='RADIOTV2 Premium' type='radio' value='0'>   x</label></td>
+        </tr>
+        <tr>
+          <td><label>NtvtV</label></td>
+          <td><label><input name='NtvtV' type='radio' value='3'>  3</label></td>
+          <td><label><input name='NtvtV' type='radio' value='/' disabled>  /</label></td>
+          <td><label><input name='NtvtV' type='radio' value='/' disabled>  /</label></td>
+          <td><label><input name='NtvtV' type='radio' value='/' disabled>  /</label></td>
+          <td><label><input name='NtvtV' type='radio' value='0'>  x</label></td>
+        </tr>
+        <tr>
+          <td><label>NtvtV Plus (OYO)</label></td>
+          <td><label><input name='NtvtV Plus (OYO)' type='radio' value='35'>  35</label></td>
+          <td><label><input name='NtvtV Plus (OYO)' type='radio' value='35'>  35</label></td>
+          <td><label><input name='NtvtV Plus (OYO)' type='radio' value='/' disabled>   /</label></td>
+          <td><label><input name='NtvtV Plus (OYO)' type='radio' value='30'>  30</label></td>
+          <td><label><input name='NtvtV Plus (OYO)' type='radio' value='0'>   x</label></td>
+        </tr>
+        <tr>
+          <td><label>Pink</label></td>
+          <td><label><input name='Pink' type='radio' value='55'> 55</label></td>
+          <td><label><input name='Pink' type='radio' value='49'> 49</label></td>
+          <td><label><input name='Pink' type='radio' value='/' disabled>  /</label></td>
+          <td><label><input name='Pink' type='radio' value='39'> 39</label></td>
+          <td><label><input name='Pink' type='radio' value='0'>  x</label></td>
+        </tr>
+        <tr>
+          <td><label>Regionalni</label></td>
+          <td><label><input name='Regionalni' type='radio' value='9'>    9</label></td>
+          <td><label><input name='Regionalni' type='radio' value='/' disabled>    /</label></td>
+          <td><label><input name='Regionalni' type='radio' value='/' disabled>    /</label></td>
+          <td><label><input name='Regionalni' type='radio' value='/' disabled>    /</label></td>
+          <td><label><input name='Regionalni' type='radio' value='0'>    x</label></td>
+        </tr>
+        <tr>
+          <td><label>Spanish</label></td>
+          <td><label><input name='Spanish' type='radio' value='19'>   19</label></td>
+          <td><label><input name='Spanish' type='radio' value='/' disabled>    /</label></td>
+          <td><label><input name='Spanish' type='radio' value='/' disabled>    /</label></td>
+          <td><label><input name='Spanish' type='radio' value='/' disabled>    /</label></td>
+          <td><label><input name='Spanish' type='radio' value='0'>    x</label></td>
+        </tr>
+        <tr>
+          <td><label>Njemački</label></td>
+          <td><label><input name='Njemački' type='radio' value='19'> 19</label></td>
+          <td><label><input name='Njemački' type='radio' value='/' disabled>  /</label></td>
+          <td><label><input name='Njemački' type='radio' value='/' disabled>  /</label></td>
+          <td><label><input name='Njemački' type='radio' value='/' disabled>  /</label></td>
+          <td><label><input name='Njemački' type='radio' value='0'>  x</label></td>
+        </tr>
+        <tr>
+          <td><label>Slovenshi</label></td>
+          <td><label><input name='Slovenshi' type='radio' value=19>    19</label></td>
+          <td><label><input name='Slovenshi' type='radio' value='/' disabled> /</label></td>
+          <td><label><input name='Slovenshi' type='radio' value='/' disabled> /</label></td>
+          <td><label><input name='Slovenshi' type='radio' value='/' disabled> /</label></td>
+          <td><label><input name='Slovenshi' type='radio' value='0'> x</label></td>
+        </tr>
+        <tr>
+          <td><label>Europski</label></td>
+          <td><label><input name='Europski' type='radio' value=39> 39</label></td>
+          <td><label><input name='Europski' type='radio' value='29'> 29</label></td>
+          <td><label><input name='Europski' type='radio' value='/' disabled>  /</label></td>
+          <td><label><input name='Europski' type='radio' value='/' disabled>  /</label></td>
+          <td><label><input name='Europski' type='radio' value='0'>  x</label></td>
+        </tr>
+      </tbody>
+  </table></br>
+
+  <table>
+    <tbody>
+      <tr>
+        <td><label><input name='stb' type='radio' value="10">Extra_tv UO24 10</label></td>
+        <td><label><input name='stb' type='radio' value="20"> Extra_tv UO12 20</label></td>
+        <td><label><input name='stb' type='radio' value="40,66"> Extra_tv bez UO 40,66</label></td>
+        <td><label><input name='stb' type='radio' value='0' >  x</label></td>
+      </tr>
+      <tr>
+        <td><label><input name='3stb' type='radio' value="10">3. TV_ultra UO24 10</label></td>
+        <td><label><input name='3stb' type='radio' value="20"> 3. TV_ultra UO12 20</label></td>
+        <td><label><input name='3stb' type='radio' value="40,66"> 3. TV_ultra bez UO 40,66</label></td>
+        <td><label><input name='3stb' type='radio' value='0'>  x</label></td>
+      </tr>
+
+          </tbody>
+  </table></br>
+    <table>
+    <tbody>
+      <tr>
+        <td><label><input name='mesh' type='radio' value="15">Multi_Mes 15</label></td>
+        <td><label><input name='mesh' type='radio' value="20">Multi_Mes, 2 repeatera 20</label></td>
+        <td><label><input name='mesh' type='radio' value="25">Multi_Mes, 3 repeatera 25</label></td>
+        <td><label><input name='mesh' type='radio' value='30'>Multi_Mes, 4 repeatera 30</label></td>
+      </tr>
+      <tr>
+        <td><label><input name='mesh' type='radio' value="40">Multi_Mes, 5 repeatera 35</label></td>
+        <td><label><input name='mesh' type='radio' value="45">Multi_Mes, 6 repeatera 45</label></td>
+        <td><label><input name='mesh' type='radio' value="0">Hybrid</label></td>
+        <td><label><input name='mesh' type='radio' value='0'>x</label></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+  
+</br>
+  <button type="button" id="gumb" onclick="clickHandler()">Izračun!</button></br>
+<h3><span id="price"> . </span>kn</h3>
+  
+  </div>
+</body>
+<script type="text/javascript">
+
+  var x = document.getElementById("tablica");
+  x.style.display = "none";
+
+
+ function sakrivanje() {
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+} 
+
+
+  function clickHandler(){
+
+    var markedRadio = document.querySelectorAll('input[type="radio"]')
+    var sum = 0;
+    for (var radio of markedRadio){   
+      if (radio.checked)  
+        sum += parseFloat(radio.value);       
+    }  
+    //document.write(sum);
+    document.getElementById("price").innerHTML = sum;
+
+  }
+
+
+
+
+
+
+ </script>
+
+</div>
+
+</html>
